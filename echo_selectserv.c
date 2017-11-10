@@ -1,3 +1,11 @@
+/*
+
+connected client: 4
+connected client: 5
+
+이렇게 뜨는데 3은 서버소켓이기 때문!
+*/
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -50,7 +58,7 @@ int main(int argc, char *argv[]){
         if((fd_num=select(fd_max+1,&cpy_reads,0,0,&timeout))==-1)
             break;
 
-        if(i=0; i<fd_max+1; i++){
+        for(i=0; i<fd_max+1; i++){
             if(FD_ISSET(i,&cpy_reads)){
                 if(i==serv_sock){
                     adr_sz=sizeof(clnt_adr);
