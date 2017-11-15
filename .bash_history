@@ -221,3 +221,9 @@ cd 12131482
 gcc echo_mpserv.c -o mindis
 gcc echo_mpclient.c -o mindic
 ./mindic 127.0.0.1 0626
+gcc echo_selectserv.c -o mindic
+gcc echo_selectserv.c -o mindic
+./mindic 0626
+./mindicc 127.0.0.1 0626
+gcc echo_client.c -o mindicc
+./mindicc 127.0.0.1 0626
