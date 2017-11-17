@@ -227,3 +227,17 @@ gcc echo_selectserv.c -o mindic
 ./mindicc 127.0.0.1 0626
 gcc echo_client.c -o mindicc
 ./mindicc 127.0.0.1 0626
+cd server_side_javascript
+node --version
+cd C:\Users\gomdo\dev\js\server_side_javascript
+cd \Users\gomdo\dev\js\server_side_javascript
+cd Users\gomdo\dev\js\server_side_javascript
+cd ..
+cd ..
+cd ..
+cd Users\gomdo\dev\js\server_side_javascript
+cd gomdo\dev\js\server_side_javascript
+cd dev\js\server_side_javascript
+cd dev
+cd js
+cd js
