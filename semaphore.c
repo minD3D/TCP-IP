@@ -29,7 +29,7 @@ int main(int argc, char *argv[]){
 void *read(void*arg){
     int i;
     for(i=0; i<5; i++){
-        fputs("Input num: ",stdout);
+        fputs("Input num: ", stdout);
         sem_wait(&sem_two);
         scanf("%d",&num);
         sem_post(&sem_one);
