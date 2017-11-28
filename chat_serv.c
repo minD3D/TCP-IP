@@ -1,3 +1,8 @@
+/*
+12131482_김민지 
+컴퓨터 네트워크 실습 과제
+*/
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
@@ -30,21 +35,26 @@ int main(int argc, char *argv[])
 	}
   
 	pthread_mutex_init(&mutx, NULL);
+	//소켓을 생성
 	serv_sock=socket(PF_INET, SOCK_STREAM, 0);
-
+	
+	//서버 주소값 초기화	
 	memset(&serv_adr, 0, sizeof(serv_adr));
 	serv_adr.sin_family=AF_INET; 
 	serv_adr.sin_addr.s_addr=htonl(INADDR_ANY);
 	serv_adr.sin_port=htons(atoi(argv[1]));
 	
+	//초기화한 주소값을 bind함수를 통해 할당
 	if(bind(serv_sock, (struct sockaddr*) &serv_adr, sizeof(serv_adr))==-1)
 		error_handling("bind() error");
+	//서버 소켓 수를 전달하여 연결대기
 	if(listen(serv_sock, 5)==-1)
 		error_handling("listen() error");
 	
 	while(1)
 	{
 		clnt_adr_sz=sizeof(clnt_adr);
+		//accept 함수를 통해 연결
 		clnt_sock=accept(serv_sock, (struct sockaddr*)&clnt_adr,&clnt_adr_sz);
 		
 		pthread_mutex_lock(&mutx);

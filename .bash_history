@@ -241,3 +241,35 @@ cd dev\js\server_side_javascript
 cd dev
 cd js
 cd js
+./mindicc 165.246.43.216 9190 mindi
+./mindicc 
+./mindicc  9190
+./mindicc 165.246.43.216 9190
+gcc chat_clnt.c -o mindic1
+gcc chat_clnt.c -o mindic1
+gcc chat_clnt.c -o mindic1
+./mindicc 127.0.0.1 0626 mindi
+./mindicc 127.0.0.1 0626
+gcc chat_clnt.c -o mindic
+gcc chat_clnt.c -o mindic
+gcc chat_clnt.c -o mindic
+./mindic 127.0.0.1 0626 mindi
+gcc chat_serv.c -o mindis
+./mindis 127.0.0.1 0626
+./mindis 0626
+gcc echo_selectserv.c -o mindis
+./mindis 0626
+gcc echo_selectserv.c -o mindis
+./mindis 0626
+q
+gcc echo_selectserv.c -o mindis
+./mindis 0626
+gcc echo_selectserv.c -o mindis
+gcc echo_selectserv.c -o mindis
+gcc echo_selectserv.c -o mindis
+./mindis 0626
+gcc echo_client.c -o mindic
+./mindic 0626
+./mindic 127.0.0.1 0626
+./mindic 127.0.0.1 0626
+./mindic 127.0.0.1 0626
