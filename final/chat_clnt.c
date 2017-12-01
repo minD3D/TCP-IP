@@ -1,3 +1,7 @@
+/*
+기말범위 클라이언트
+입출력을 분할하여 계속 서버로 메세지 보내고 받도록 짬
+*/
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h> 
@@ -48,6 +52,7 @@ int main(int argc, char *argv[])
         return 0;
 }
 
+//send를 위한 쓰레드
 void * send_msg(void *arg){
     int sock=*((int*)arg);
     char name_msg[NAME_SIZE+BUF_SIZE];
@@ -64,7 +69,7 @@ void * send_msg(void *arg){
     return NULL;
 }
 
-
+//recieve를 위한 쓰레드
 void * recv_msg(void * arg)   // read thread main
 {
 	int sock=*((int*)arg);

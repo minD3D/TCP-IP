@@ -10,6 +10,9 @@ connected client: 5
 0 표준입력
 1 표준출력
 2 에러
+
+
+기말범위!
 */
 
 #include <stdio.h>
@@ -67,7 +70,7 @@ int main(int argc, char *argv[]){
             break;
 
         for(i=0; i<fd_max+1; i++){//모든 파일 디스크립터 안의 값이 1인지 확인한다.[0/0/0/0/1]로 셋되어 있을것.
-            if(FD_ISSET(i,&cpy_reads)){
+            if(FD_ISSET(i,&cpy_reads)){//일일히 비교를해주어
                 if(i==serv_sock){//서버소켓 위치인 경우
                     adr_sz=sizeof(clnt_adr);
                     clnt_sock=accept(serv_sock,(struct sockaddr*)&clnt_adr,&adr_sz);
@@ -79,7 +82,8 @@ int main(int argc, char *argv[]){
                     printf("Connected client : %s %d \n", inet_ntoa(clnt_adr.sin_addr) , ntohs(clnt_adr.sin_port));
                     printf("connected client: %d \n", clnt_sock);
                 }
-                else{//클라이언트 소켓 파일디스크립터가 1인경우
+                else{//클라이언트 소켓 파일디스크립터가 1인경우 
+                    //클라이언트로부터 메세지를 받았다는 의미
                     str_len=read(i,buf,BUF_SIZE);
                     if(str_len==0){
                         FD_CLR(i,&reads);
