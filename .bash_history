@@ -273,3 +273,7 @@ gcc echo_client.c -o mindic
 ./mindic 127.0.0.1 0626
 ./mindic 127.0.0.1 0626
 ./mindic 127.0.0.1 0626
+gcc echo_selectserv.c -o mindis
+./mindis 0626
+./mindic 127.0.0.1 0626
+./mindic 127.0.0.1 0626
